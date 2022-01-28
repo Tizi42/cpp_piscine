@@ -1,6 +1,9 @@
 #ifndef CONTACT_CLASS_H
 # define CONTACT_CLASS_H
 
+# include <iostream>
+# include <string>
+
 class Contact
 {
 public:
@@ -10,9 +13,9 @@ public:
 	std::string	number;
 	std::string	secret;
 
+	Contact(void);
 	Contact(std::string fna, std::string ln, std::string nn,
 			std::string num, std::string sec);
-	~Contact(void);
 };
 
 #endif

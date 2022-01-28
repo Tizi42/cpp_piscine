@@ -19,13 +19,13 @@ RM	= rm -rf
 all:	${NAME}
 
 ${NAME}: ${OBJS}
-	${CC} ${CFLAGS} $^ -o $@
+	${CXX} ${CFLAGS} $^ -o $@
 
 ${DIROBJ}:
 	mkdir -p $@
 
 ${DIROBJ}/%.o: %.cpp | ${DIROBJ}
-	${CC} ${CFLAGS} -c $< -o $@
+	${CXX} ${CFLAGS} -c $< -o $@
 
 clean:
 	${RM} ${DIROBJ}
