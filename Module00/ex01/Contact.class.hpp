@@ -3,19 +3,28 @@
 
 # include <iostream>
 # include <string>
+# include "tools.hpp"
 
 class Contact
 {
 public:
-	std::string	firstname;
-	std::string	lastname;
-	std::string	nickname;
-	std::string	number;
-	std::string	secret;
+	void		display(void) const;
+	void		set(std::string fn, std::string ln, std::string nn,
+					std::string num, std::string sec);
+	std::string getFirstname(void) const;
+	std::string getLastname(void) const;
+	std::string getNickname(void) const;
 
 	Contact(void);
-	Contact(std::string fna, std::string ln, std::string nn,
+	Contact(std::string fn, std::string ln, std::string nn,
 			std::string num, std::string sec);
+
+private:
+	std::string	_firstname;
+	std::string	_lastname;
+	std::string	_nickname;
+	std::string	_number;
+	std::string	_secret;
 };
 
 #endif

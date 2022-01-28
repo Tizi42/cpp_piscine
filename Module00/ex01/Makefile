@@ -1,6 +1,6 @@
 NAME	= iPhonebook
 
-SRCS	= phonebook.cpp PhoneBook.class.cpp Contact.class.cpp
+SRCS	= phonebook.cpp PhoneBook.class.cpp Contact.class.cpp tools.cpp
 
 OBJS	= ${addprefix ${DIROBJ}/, ${SRCS:.cpp=.o}}
 
