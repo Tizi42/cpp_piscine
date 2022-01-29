@@ -1,8 +1,6 @@
-NAME	= iPhonebook
+NAME	= atm
 
-SRCS	= main.cpp PhoneBook.class.cpp Contact.class.cpp tools.cpp
-
-DIRSRC = srcs
+SRCS	= Account.cpp tests.cpp
 
 OBJS	= ${addprefix ${DIROBJ}/, ${SRCS:.cpp=.o}}
 
@@ -14,7 +12,7 @@ CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 INCLUDE	= -I ${DIRHEADER}
 
-DIRHEADER	= includes
+DIRHEADER	= .
 
 RM	= rm -rf
 
@@ -26,7 +24,7 @@ ${NAME}: ${OBJS}
 ${DIROBJ}:
 	mkdir -p $@
 
-${DIROBJ}/%.o: ${DIRSRC}/%.cpp | ${DIROBJ}
+${DIROBJ}/%.o: %.cpp | ${DIROBJ}
 	${CXX} ${CFLAGS} ${INCLUDE} -c $< -o $@
 
 clean:

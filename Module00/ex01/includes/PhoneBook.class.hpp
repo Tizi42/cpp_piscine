@@ -7,12 +7,11 @@
 # include "tools.hpp"
 # include "Contact.class.hpp"
 
-class PhoneBook
-{
+class PhoneBook {
+
 public:
+	void open(void);
 	void display(void) const;
-	void add(void);
-	void search(void);
 
 	PhoneBook(void);
 
@@ -20,6 +19,10 @@ private:
 	Contact		_contacts[8];
 	int			_nbContacts;
 	int			_oldestIndex;
+
+	void _add(void);
+	void _search(void);
+
 };
 
 #endif

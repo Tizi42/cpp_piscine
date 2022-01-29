@@ -5,8 +5,8 @@
 # include <string>
 # include "tools.hpp"
 
-class Contact
-{
+class Contact {
+
 public:
 	void		display(void) const;
 	void		set(std::string fn, std::string ln, std::string nn,
@@ -25,6 +25,7 @@ private:
 	std::string	_nickname;
 	std::string	_number;
 	std::string	_secret;
+
 };
 
 #endif
