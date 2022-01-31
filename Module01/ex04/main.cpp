@@ -33,6 +33,11 @@ void	copy_replace(std::string str, std::string filename,
 	std::ofstream	ofs(filename);
 	int				found;
 
+	if (ofs.fail())
+	{
+		std::cout << "Failed to create/open the output file: " << filename << std::endl;
+		return ;
+	}
 	if (s1.empty())
 	{
 		ofs << str;
