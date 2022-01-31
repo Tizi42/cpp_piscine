@@ -26,6 +26,8 @@ void	Account::_displayTimestamp( void ) {
 Account::Account( int initial_deposit ) : _amount(initial_deposit) {
 
 	this->_accountIndex = Account::_nbAccounts;
+	this->_nbDeposits = 0;
+	this->_nbWithdrawals = 0;
 	Account::_nbAccounts++;
 	Account::_totalAmount += initial_deposit;
 	Account::_displayTimestamp();
