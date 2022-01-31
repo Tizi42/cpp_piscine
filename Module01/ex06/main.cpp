@@ -17,7 +17,10 @@ int	main(int ac, char **av)
 	Karen	karen;
 
 	if (ac != 2)
+	{
+		std::cout << "Usage:./karenFilter complain_level" << std::endl;
 		return (1);
+	}
 	switch (karen.getLevelInt(av[1]))
 	{
 		case 0:

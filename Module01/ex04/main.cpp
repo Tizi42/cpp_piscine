@@ -33,6 +33,11 @@ void	copy_replace(std::string str, std::string filename,
 	std::ofstream	ofs(filename);
 	int				found;
 
+	if (s1.empty())
+	{
+		ofs << str;
+		return ;
+	}
 	found = str.find(s1);
 	while (found != (int)std::string::npos)
 	{
@@ -41,6 +46,7 @@ void	copy_replace(std::string str, std::string filename,
 		found = str.find(s1);
 	}
 	ofs << str;
+	return ;
 }
 
 int main(int ac, char **av)
