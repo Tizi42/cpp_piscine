@@ -34,7 +34,7 @@ void	copy_replace(std::string str, std::string filename,
 	int				found;
 
 	found = str.find(s1);
-	while (found != std::string::npos)
+	while (found != (int)std::string::npos)
 	{
 		ofs << str.substr(0, found) << s2;
 		str = str.substr(found + s1.size());
@@ -48,11 +48,18 @@ int main(int ac, char **av)
 	std::string str;
 
 	if (ac != 4)
+	{
+		std::cout << "Usage: ./replace filename s1 s2" << std::endl;
 		return (1);
+	}
 	std::ifstream	ifs(av[1]);
 	if (ifs.fail())
+	{
+		std::cout << "Invalid filename" << std::endl;
 		return (1);
+	}
 	str = read_file_to_str(ifs);
 	copy_replace(str, (std::string)av[1] + ".replace", av[2], av[3]);
+
 	return (0);
 }

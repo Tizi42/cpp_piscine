@@ -12,7 +12,8 @@
 
 #include "Zombie.hpp"
 
-int	main() {
+int	main(void) {
+
 	Zombie*	zbs;
 
 	zbs = zombieHorde(42, "foo");

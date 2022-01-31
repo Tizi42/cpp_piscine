@@ -31,10 +31,12 @@ void	HumanB::setWeapon(Weapon& weapon) {
 }
 
 HumanB::HumanB(std::string n) : _name(n) {
+
 	this->_weapon = new Weapon("");
 }
 
 HumanB::~HumanB(void) {
+
 	if (this->_weapon->getType().empty())
 		delete this->_weapon;
 }
