@@ -14,7 +14,7 @@
 
 void	HumanB::attack(void) const {
 
-	if (this->_weapon->getType().empty())
+	if (this->_weapon == NULL)
 	{
 		std::cout << this->_name << " attacks with his bare hands" << std::endl;
 		return ;
@@ -25,18 +25,14 @@ void	HumanB::attack(void) const {
 
 void	HumanB::setWeapon(Weapon& weapon) {
 
-	if (this->_weapon->getType().empty())
-		delete this->_weapon;
 	this->_weapon = &weapon;
 }
 
 HumanB::HumanB(std::string n) : _name(n) {
 
-	this->_weapon = new Weapon("");
+	this->_weapon = NULL;
 }
 
 HumanB::~HumanB(void) {
 
-	if (this->_weapon->getType().empty())
-		delete this->_weapon;
 }

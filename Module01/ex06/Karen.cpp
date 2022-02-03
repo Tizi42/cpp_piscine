@@ -12,6 +12,14 @@
 
 #include "Karen.hpp"
 
+Karen::Karen( void ) {
+
+}
+
+Karen::~Karen( void ) {
+
+}
+
 int	Karen::getLevelInt(std::string level) const
 {
 	int			i;

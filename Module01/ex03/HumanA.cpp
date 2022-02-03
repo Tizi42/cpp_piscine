@@ -21,3 +21,7 @@ void	HumanA::attack( void ) const {
 HumanA::HumanA(std::string n, Weapon& w) : _name(n), _weapon(w) {
 
 }
+
+HumanA::~HumanA ( void ) {
+	
+}
