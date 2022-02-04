@@ -68,7 +68,7 @@ float	Fixed::toFloat( void ) const {
 
 int	Fixed::toInt( void ) const {
 
-	return (this->_fixedPoint / pow(2, Fixed::_fractional));
+	return (roundf(this->_fixedPoint / pow(2, Fixed::_fractional)));
 }
 
 std::ostream &	operator<<(std::ostream & ofs, Fixed const & rhs) {
