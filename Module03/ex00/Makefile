@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: tyuan <tyuan@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/02/03 12:03:28 by tyuan             #+#    #+#              #
-#    Updated: 2022/02/03 12:03:29 by tyuan            ###   ########.fr        #
+#    Created: 2022/02/03 12:03:56 by tyuan             #+#    #+#              #
+#    Updated: 2022/02/03 12:04:07 by tyuan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= BSP
+NAME	= clap
 
-SRCS	= main.cpp Fixed.cpp Point.cpp bsp.cpp
+SRCS	= main.cpp ClapTrap.cpp
 
 OBJS	= ${addprefix ${DIROBJ}/, ${SRCS:.cpp=.o}}
 
