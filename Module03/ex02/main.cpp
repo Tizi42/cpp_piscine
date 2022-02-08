@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tyuan <tyuan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/04 13:40:01 by tyuan             #+#    #+#             */
-/*   Updated: 2022/02/04 13:40:02 by tyuan            ###   ########.fr       */
+/*   Created: 2022/02/04 10:33:18 by tyuan             #+#    #+#             */
+/*   Updated: 2022/02/04 10:33:40 by tyuan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAG_TRAP_H
-# define FRAG_TRAP_H
+#include <iostream>
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-# include <iostream>
-# include "ClapTrap.hpp"
+int main(void)
+{
 
-class FragTrap : public ClapTrap {
+	FragTrap	frag("Harry");
+	frag.highFivesGuys();
+	frag.attack("Lily");
+	frag.takeDamage(3);
 
-public:
-	FragTrap(void);
-	FragTrap(std::string name);
-	FragTrap(FragTrap const & rhs);
-	~FragTrap(void);
-
-	FragTrap & operator=(FragTrap const & rhs);
-	void highFivesGuys(void);
-};
-
-#endif
+	FragTrap	anotherfrag(frag);
+}

@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tyuan <tyuan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/04 13:40:01 by tyuan             #+#    #+#             */
-/*   Updated: 2022/02/04 13:40:02 by tyuan            ###   ########.fr       */
+/*   Created: 2022/02/04 10:33:18 by tyuan             #+#    #+#             */
+/*   Updated: 2022/02/04 10:33:40 by tyuan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAG_TRAP_H
-# define FRAG_TRAP_H
+#include <iostream>
+#include "ScavTrap.hpp"
 
-# include <iostream>
-# include "ClapTrap.hpp"
-
-class FragTrap : public ClapTrap {
-
-public:
-	FragTrap(void);
-	FragTrap(std::string name);
-	FragTrap(FragTrap const & rhs);
-	~FragTrap(void);
-
-	FragTrap & operator=(FragTrap const & rhs);
-	void highFivesGuys(void);
-};
-
-#endif
+int main(void)
+{
+	ScavTrap	scav("Sally");
+	scav.guardGate();
+	scav.attack("Tom");
+	scav.takeDamage(42);
+	scav.beRepaired(10);
+}

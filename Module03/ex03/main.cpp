@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tyuan <tyuan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/04 13:40:01 by tyuan             #+#    #+#             */
-/*   Updated: 2022/02/04 13:40:02 by tyuan            ###   ########.fr       */
+/*   Created: 2022/02/04 10:33:18 by tyuan             #+#    #+#             */
+/*   Updated: 2022/02/04 10:33:40 by tyuan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAG_TRAP_H
-# define FRAG_TRAP_H
+#include <iostream>
+#include "DiamondTrap.hpp"
 
-# include <iostream>
-# include "ClapTrap.hpp"
+int main(void)
+{
 
-class FragTrap : public ClapTrap {
+	DiamondTrap	diamond("Harry");
 
-public:
-	FragTrap(void);
-	FragTrap(std::string name);
-	FragTrap(FragTrap const & rhs);
-	~FragTrap(void);
+	std::cout << std::endl;
+	diamond.highFivesGuys();
+	std::cout << std::endl;
+	diamond.attack("Lily");
+	diamond.takeDamage(23);
+	diamond.beRepaired(5);
+	diamond.whoAmI();
+	std::cout << std::endl;
 
-	FragTrap & operator=(FragTrap const & rhs);
-	void highFivesGuys(void);
-};
-
-#endif
+//	DiamondTrap	anotherdiamond(diamond);
+}

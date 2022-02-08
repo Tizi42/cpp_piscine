@@ -20,9 +20,10 @@ ScavTrap::ScavTrap(void) {
 	this->_attackDamage = 20;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
+ScavTrap::ScavTrap(std::string name) {
 
 	std::cout << "ScavTrap name constructor called" << std::endl;
+	this->_name = name;
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
 	this->_attackDamage = 20;
@@ -50,6 +51,20 @@ ScavTrap & ScavTrap::operator=(ScavTrap const & rhs) {
 	this->_energyPoints = rhs.getEnergy();
 	this->_attackDamage = rhs.getEnergy();
 	return (*this);
+}
+
+void ScavTrap::attack(const std::string& target) {
+	if (this->_energyPoints == 0 || this->_hitPoints == 0)
+	{
+		std::cout << "ScavTrap " << this->_name << " can't attack anymore..." << std::endl;
+		this->printStatus();
+		return ;
+	}
+	std::cout << "ScavTrap " << this->_name << " attacks ";
+	std::cout << target << ", causing " << this->_attackDamage;
+	std::cout << " points of damage!" << std::endl;
+	this->_energyPoints--;
+	this->printStatus();
 }
 
 void ScavTrap::guardGate(void) {
