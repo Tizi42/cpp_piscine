@@ -50,7 +50,7 @@ FragTrap & FragTrap::operator=(FragTrap const & rhs) {
 	return (*this);
 }
 
-void FragTrap::highFivesGuys(void) {
+void FragTrap::highFivesGuys(void) const {
 
 	std::cout << "FragTrap " << this->_name;
 	std::cout << " has a positive high fives request" << std::endl;

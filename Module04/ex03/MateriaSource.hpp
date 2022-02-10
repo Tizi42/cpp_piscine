@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tyuan <tyuan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/04 13:49:37 by tyuan             #+#    #+#             */
-/*   Updated: 2022/02/04 13:49:38 by tyuan            ###   ########.fr       */
+/*   Created: 2022/02/10 17:26:54 by tyuan             #+#    #+#             */
+/*   Updated: 2022/02/10 17:26:56 by tyuan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMOND_TRAP_H
-# define DIAMOND_TRAP_H
+#ifndef MATERIASOURCE_H
+# define MATERIASOURCE_H
 
 # include <iostream>
-# include "ScavTrap.hpp"
-# include "FragTrap.hpp"
+# include "IMateriaSource.hpp"
+# include "AMateria.hpp"
 
-class DiamondTrap : public ScavTrap, public FragTrap {
+class MateriaSource : public IMateriaSource {
 
 public:
-	DiamondTrap(void);
-	DiamondTrap(std::string name);
-	DiamondTrap(DiamondTrap const & rhs);
-	~DiamondTrap(void);
+	MateriaSource(void);
+	MateriaSource(MateriaSource const & rhs);
+	~MateriaSource(void);
 
-	DiamondTrap & operator=(DiamondTrap const & rhs);
-	void whoAmI(void) const;
-	void attack(const std::string& target);
+	MateriaSource & operator=(MateriaSource const & rhs);
+
+	void learnMateria(AMateria*);
+	AMateria* createMateria(std::string const & type);
+
+	AMateria * getInventoryAt(int idx) const;
 
 private:
-	std::string	_name;
+	AMateria * 	_inventory[4];
 };
 
 #endif

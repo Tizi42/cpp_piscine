@@ -1,31 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tyuan <tyuan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/04 10:18:08 by tyuan             #+#    #+#             */
-/*   Updated: 2022/02/04 10:18:10 by tyuan            ###   ########.fr       */
+/*   Created: 2022/02/08 16:53:45 by tyuan             #+#    #+#             */
+/*   Updated: 2022/02/08 16:53:47 by tyuan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAV_TRAP_H
-# define SCAV_TRAP_H
+#ifndef CAT_H
+#define  CAT_H
 
 # include <iostream>
-# include "ClapTrap.hpp"
+# include "AAnimal.hpp"
+# include "Brain.hpp"
 
-class ScavTrap : public ClapTrap {
+
+class Cat : public AAnimal {
 
 public:
-	ScavTrap(void);
-	ScavTrap(std::string name);
-	ScavTrap(ScavTrap const & rhs);
-	~ScavTrap(void);
+	Cat(void);
+	Cat(Cat const & rhs);
+	~Cat(void);
 
-	ScavTrap & operator=(ScavTrap const & rhs);
-	void guardGate(void) const;
+	Cat & 	operator=(Cat const & rhs);
+	void	makeSound(void) const;
+	Brain *	getBrain(void) const;
+	void	setBrain(Brain & brn);
+
+private:
+	Brain *	_brain;
 };
 
 #endif

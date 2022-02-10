@@ -50,7 +50,7 @@ DiamondTrap & DiamondTrap::operator=(DiamondTrap const & rhs) {
 	return (*this);
 }
 
-void DiamondTrap::whoAmI(void) {
+void DiamondTrap::whoAmI(void) const {
 
 	std::cout << "DiamondTrap: my name is " << this->_name << std::endl;
 	std::cout << "And my ClapTrap name is " << ClapTrap::_name << std::endl;

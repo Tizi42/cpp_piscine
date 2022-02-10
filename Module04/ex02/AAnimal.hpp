@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tyuan <tyuan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/04 10:18:08 by tyuan             #+#    #+#             */
-/*   Updated: 2022/02/04 10:18:10 by tyuan            ###   ########.fr       */
+/*   Created: 2022/02/08 16:53:40 by tyuan             #+#    #+#             */
+/*   Updated: 2022/02/10 13:00:11 by tyuan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAV_TRAP_H
-# define SCAV_TRAP_H
+#ifndef AANIMAL_H
+# define AANIMAL_H
 
 # include <iostream>
-# include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class AAnimal {
 
 public:
-	ScavTrap(void);
-	ScavTrap(std::string name);
-	ScavTrap(ScavTrap const & rhs);
-	~ScavTrap(void);
+	AAnimal(void);
+	AAnimal(AAnimal const & rhs);
+	virtual ~AAnimal(void);
 
-	ScavTrap & operator=(ScavTrap const & rhs);
-	void guardGate(void) const;
+	AAnimal &		operator=(AAnimal const & rhs);
+	std::string		getType(void) const;
+	virtual void	makeSound(void) const = 0;
+
+protected:
+	std::string type;
 };
 
 #endif

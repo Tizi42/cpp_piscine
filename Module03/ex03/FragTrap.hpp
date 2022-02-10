@@ -25,7 +25,7 @@ public:
 	~FragTrap(void);
 
 	FragTrap & operator=(FragTrap const & rhs);
-	void highFivesGuys(void);
+	void highFivesGuys(void) const;
 };
 
 #endif
