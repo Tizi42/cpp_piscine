@@ -20,14 +20,14 @@ class AMateria;
 class IMateriaSource {
 
 public:
-	IMateriaSource(void);
-	IMateriaSource(IMateriaSource const & rhs);
-
-	IMateriaSource & operator=(IMateriaSource const & rhs);
-
 	virtual ~IMateriaSource() {}
 	virtual void learnMateria(AMateria*) = 0;
 	virtual AMateria* createMateria(std::string const & type) = 0;
+
+/*protected:
+	IMateriaSource(void);
+	IMateriaSource(IMateriaSource const & rhs);
+	IMateriaSource & operator=(IMateriaSource const & rhs);*/
 };
 
 #endif
