@@ -31,6 +31,7 @@ int main(void)
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
+	
 	const WrongAnimal* wc = new WrongCat();
 	const WrongAnimal* wa = new WrongAnimal();
 	std::cout << std::endl;
