@@ -6,7 +6,7 @@
 /*   By: tyuan <tyuan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/08 16:50:43 by tyuan             #+#    #+#             */
-/*   Updated: 2022/02/08 16:50:44 by tyuan            ###   ########.fr       */
+/*   Updated: 2022/02/16 14:19:10 by tyuan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ int main(void)
 	delete a;
 
 	std::cout << "! Uncomment the line below to get un error !" << std::endl;
-	//AAnimal a;
+	//AAnimal b;
 	return 0;
 }

@@ -6,14 +6,13 @@
 #    By: tyuan <tyuan@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/08 16:50:41 by tyuan             #+#    #+#              #
-#    Updated: 2022/02/10 13:06:38 by tyuan            ###   ########.fr        #
+#    Updated: 2022/02/16 14:38:59 by tyuan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= 03
 
-SRCS	= main.cpp AMateria.cpp Cure.cpp Ice.cpp ICharacter.cpp Character.cpp \
-			IMateriaSource.cpp MateriaSource.cpp
+SRCS	= main.cpp AMateria.cpp Cure.cpp Ice.cpp Character.cpp  MateriaSource.cpp
 
 OBJS	= ${addprefix ${DIROBJ}/, ${SRCS:.cpp=.o}}
 
