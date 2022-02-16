@@ -28,6 +28,8 @@ MateriaSource::MateriaSource(MateriaSource const & rhs) {
 MateriaSource::~MateriaSource(void) {
 
 	std::cout << "MateriaSource destructor called" << std::endl;
+	for (int i = 0; i < 4; i++)
+		delete this->_inventory[i];
 }
 
 MateriaSource & MateriaSource::operator=(MateriaSource const & rhs) {
@@ -48,7 +50,8 @@ void MateriaSource::learnMateria(AMateria * m) {
 	int i;
 
 	for (i = 0; i < 4 && this->_inventory[i]; i++)
-		;
+		if (this->_inventory[i] == m)
+			return ;
 	if (i < 4)
 	{
 		this->_inventory[i] = m;
