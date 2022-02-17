@@ -10,9 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= 00
+NAME	= conversion
 
-SRCS	= main.cpp
+SRCS	= main.cpp detectType.cpp display.cpp
 
 OBJS	= ${addprefix ${DIROBJ}/, ${SRCS:.cpp=.o}}
 
@@ -26,7 +26,7 @@ INCLUDE	= -I ${DIRHEADER}
 
 DIRHEADER	= .
 
-HEADERS =
+HEADERS = conversion.hpp
 
 RM	= rm -rf
 
