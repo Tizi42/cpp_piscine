@@ -56,9 +56,6 @@ Form *	Intern::makeForm(std::string fname, std::string target) {
 	ret = NULL;
 	switch(formType(fname)) {
 
-		case NONEXIST:
-			std::cout << "Form name incorrect!" << std::endl;
-			break;
 		case SHRUBBERY:
 			ret = new ShrubberyCreationForm(fname, target);
 			break;
@@ -67,6 +64,9 @@ Form *	Intern::makeForm(std::string fname, std::string target) {
 			break;
 		case PRESIDENTIAL:
 			ret = new PresidentialPardonForm(fname, target);
+			break;
+		default:
+			std::cout << "Form name incorrect!" << std::endl;
 	}
 	if (ret)
 		std::cout << "Intern creates " << fname << " form" << std::endl;

@@ -27,7 +27,7 @@ int main(void)
 	Data a;
 	Data *b;
 	
-	a.data = 1;
+	a.data = 42;
 	std::cout << &a << std::endl;
 	b = deserialize(serialize(&a));
 	std::cout << b << std::endl;

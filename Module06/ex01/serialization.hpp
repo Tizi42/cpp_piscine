@@ -6,7 +6,7 @@
 /*   By: tyuan <tyuan@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 22:19:53 by tyuan             #+#    #+#             */
-/*   Updated: 2022/02/15 22:19:53 by tyuan            ###   ########.fr       */
+/*   Updated: 2022/02/19 13:51:56 by tyuan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define SERILIZATION_H
 
 # include <iostream>
+# include <stdint.h>
 
 struct Data {
 	int	data;

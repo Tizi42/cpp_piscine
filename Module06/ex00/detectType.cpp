@@ -64,7 +64,7 @@ int	detectType(std::string str)
 		else if (isDouble(str))
 			typeDouble(str);
 		else if (isInt(str))
-			typeInt(std::stoi(str));
+			typeInt(str);
 		else
 		{
 			std::cout << "Error: type value non-valid" << std::endl;

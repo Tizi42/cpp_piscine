@@ -15,7 +15,10 @@
 
 # include <iostream>
 # include <iomanip>
-# include <limits>  
+# include <limits>
+# include <string>
+# include <cstdlib>
+# include <cerrno>
 
 
 int	isInt(std::string str);
@@ -24,7 +27,7 @@ int	isFloat(std::string str);
 int detectType(std::string str);
 
 void	typeChar(char c);
-void	typeInt(int n);
+void	typeInt(std::string str);
 void	typeFloat(std::string str);
 void	typeDouble(std::string str);
 
