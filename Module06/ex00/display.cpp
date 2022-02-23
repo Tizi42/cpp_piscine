@@ -20,8 +20,16 @@ void	typeChar(char c)
 	std::cout << "double: " << static_cast<double>(c) << ".0" <<std::endl;
 }
 
-void	typeInt(int n)
+void	typeInt(std::string str)
 {
+	long int ln;
+	int n;
+
+	ln = std::strtol(str.c_str(), NULL, 10);
+	if (ln > std::numeric_limits<int>::max()
+		|| ln < std::numeric_limits<int>::min())
+		throw std::out_of_range("");
+	n = static_cast<int>(ln);
 	if (n > 31 && n < 127)
 		std::cout << "char: '" << static_cast<char>(n) << "'" << std::endl;
 	else if (n >= 0 && n <= 127)
@@ -39,7 +47,9 @@ void	typeFloat(std::string str)
 	float		f;
 	std::string	sign;
 
-	f = std::stof(str);
+	f = std::strtof(str.c_str(), NULL);
+	if (errno == ERANGE)
+		throw std::out_of_range("");
 	if (f > std::numeric_limits<int>::max()
 		|| f < std::numeric_limits<int>::min()
 		|| str == "-inff" || str == "inff" || str == "+inff" || str ==  "nanf")
@@ -68,7 +78,9 @@ void	typeDouble(std::string str)
 	double		d;
 	std::string	sign;
 
-	d = std::stod(str);
+	d = std::strtod(str.c_str(), NULL);
+	if (errno == ERANGE)
+		throw std::out_of_range("");
 	if (d > std::numeric_limits<int>::max()
 		|| d < std::numeric_limits<int>::min()
 		|| str == "-inf" || str == "inf" || str == "+inf" || str ==  "nan")
@@ -89,7 +101,7 @@ void	typeDouble(std::string str)
 	sign = str[0] == '+' ? "+" : "";
 	std::cout << std::fixed << std::setprecision(1);
 	if (str != "-inf" && str != "inf" && str != "+inf"
-		&& (d > std::numeric_limits<float>::max() || d < std::numeric_limits<float>::lowest()))
+		&& (d > std::numeric_limits<float>::max() || d < -std::numeric_limits<float>::max()))
 		std::cout << "float: impossible" <<std::endl;
 	else
 		std::cout << "float: " << sign << static_cast<float>(d) << "f" <<std::endl;

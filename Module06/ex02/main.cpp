@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <iostream>
-#include <random>
+#include <cstdlib>
 #include <ctime>
 #include "A.hpp"
 #include "B.hpp"
@@ -53,7 +53,7 @@ void identify(Base & p)
 		p = a;
 		std::cout << "The type of the object pointed to by p: A" << std::endl;
 	}
-	catch (std::bad_cast &e)
+	catch (std::exception & e)
 	{
 		try
 		{
@@ -61,7 +61,7 @@ void identify(Base & p)
 			p = b;
 			std::cout << "The type of the object pointed to by p: B" << std::endl;
 		}
-		catch (std::bad_cast &e)
+		catch (std::exception & e)
 		{
 			std::cout << "The type of the object pointed to by p: C" << std::endl;
 		}
