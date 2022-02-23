@@ -17,6 +17,7 @@ int main(void)
 	char	tab[3] = {'9', 'b', 'c'};
 	int		tab2[5] = {2, 3, 5, 7, -22};
 
-	iter<char, int>(tab, 3, isdigit);
-	iter<int, void>(tab2, 5, printArray<int>);
+	iter<char>(tab, 3, printArray<char>);
+	std::cout << std::endl;
+	iter<int>(tab2, 5, printArray<int>);
 }

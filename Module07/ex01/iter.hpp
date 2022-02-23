@@ -15,8 +15,8 @@
 
 # include <iostream>
 
-template<typename T, typename U>
-void iter(T tab[], size_t size, std::function<U(T)> f) {
+template<typename T>
+void iter(T tab[], size_t size, void (*f)(T &)) {
 
 	for (size_t i = 0; i < size; i++) {
 		f(tab[i]);

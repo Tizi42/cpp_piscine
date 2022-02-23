@@ -16,9 +16,11 @@
 int main(void)
 {
 	char * a1 = new char();
-	std::cout << "char a1 default value: '" << *a1 << "'" << std::endl;
+	std::cout << "-> char *a1 = new char();" << std::endl;
+	std::cout << "*a1 = '" << *a1 << "'" << std::endl;
 	Array<char> a2(1);
-	std::cout << "Array<char> a2(1) default value: '" << *a1 << "'" << std::endl;
+	std::cout << "-> Array<char> a2(1);" << std::endl;
+	std::cout << "a2[0] = '" << a2[0] << "'" << std::endl;
 	std::cout << std::endl;
 
 	Array<int> b(3);

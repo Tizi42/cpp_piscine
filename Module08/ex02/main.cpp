@@ -49,8 +49,8 @@ int main(void) {
 	MutantStack<int>::reverse_iterator	rbegin = copyStack.rbegin();
 	MutantStack<int>::reverse_iterator	rend = copyStack.rend();
 
-	rend++;
-	rend--;
+	rbegin++;
+	rbegin--;
 
 	while (rbegin != rend)
 	{
